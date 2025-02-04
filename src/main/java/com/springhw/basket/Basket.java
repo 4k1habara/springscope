@@ -2,12 +2,13 @@ package com.springhw.basket;
 
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
+import org.springframework.web.context.annotation.SessionScope;
 
 import java.util.HashSet;
 import java.util.Set;
 
 @Component
-@Scope("prototype")
+@SessionScope
 public class Basket {
     Set<Integer> basket = new HashSet<>();
 
