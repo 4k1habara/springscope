@@ -1,0 +1,26 @@
+package com.springhw.basket;
+
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+import org.springframework.web.context.annotation.SessionScope;
+
+import java.util.HashSet;
+import java.util.Set;
+
+@Component
+@SessionScope
+public class Basket {
+    Set<Integer> basket = new HashSet<>();
+
+    public Set<Integer> getBasket() {
+        return basket;
+    }
+
+    public void setBasket(Set<Integer> basket) {
+        this.basket = basket;
+    }
+
+    public void addOrder(Set<Integer> order) {
+        basket.addAll(order);
+    }
+}
